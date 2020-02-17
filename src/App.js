@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Shape from './Shape/Shape'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    render() {
+        const multipleShapes = []
+        // Shape array = shapes * i
+        for(let i = 0; i < 60; i++) { 
+            multipleShapes.push(<Shape/>)
+        }
+
+        return (
+            <div>
+            {multipleShapes}
+            </div>
+        )
+    }
 }
-
 export default App;
